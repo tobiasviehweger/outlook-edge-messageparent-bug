@@ -1,5 +1,5 @@
 (function () {
-    Office.initialize = async function (reason) {
+    Office.initialize = function (reason) {
     };
 })();
 
