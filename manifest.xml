@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp 
+	xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xsi:type="MailApp">
+	<Id>6efba684-e666-4d35-822f-65766a220e17</Id>
+	<Version>1.0</Version>
+	<ProviderName>yasoon</ProviderName>
+	<DefaultLocale>en-US</DefaultLocale>
+	<DisplayName DefaultValue="Edge WebView messageParent Issue Repro" />
+	<Description DefaultValue="Edge WebView messageParent Issue Repro"/>
+	<IconUrl DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-64.png" />
+	<HighResolutionIconUrl DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-128.png" />
+	<SupportUrl DefaultValue="https://www.yasoon.com" />
+	<Hosts>
+		<Host Name="Mailbox" />
+	</Hosts>
+	<Requirements>
+		<Sets>
+			<Set Name="MailBox" MinVersion="1.4" />
+		</Sets>
+	</Requirements>
+	<!-- These elements support older clients that don't support add-in commands -->
+	<FormSettings>
+		<Form xsi:type="ItemRead">
+			<DesktopSettings>
+				<SourceLocation DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/taskpane.html"/>
+				<RequestedHeight>300</RequestedHeight>
+			</DesktopSettings>
+		</Form>
+	</FormSettings>
+	<Permissions>ReadWriteMailbox</Permissions>
+	<Rule xsi:type="RuleCollection" Mode="Or">
+		<Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
+		<Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit" />
+		<Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+		<Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Read" /></Rule>
+	<DisableEntityHighlighting>false</DisableEntityHighlighting>
+	<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+		<Hosts>
+			<Host xsi:type="MailHost">
+				<DesktopFormFactor>
+				    <FunctionFile resid="residDesktopRibbonHandler" />
+					<ExtensionPoint xsi:type="MessageReadCommandSurface">
+						<OfficeTab id="TabDefault">
+							<Group id="groupMsgRead">
+								<Label resid="residLabelGroupMsgRead"/>								
+								<Control xsi:type="Button" id="buttonNew">
+									<Label resid="residLabelNew" />
+									<Supertip>
+										<Title resid="residLabelNew" />
+										<Description resid="residLabelNew" />
+									</Supertip>
+									<Icon>
+										<bt:Image size="16" resid="residIcon-16" />
+										<bt:Image size="32" resid="residIcon-32" />
+										<bt:Image size="80" resid="residIcon-80" />
+									</Icon>
+									<Action xsi:type="ExecuteFunction">
+										<FunctionName>openDialog</FunctionName>
+									</Action>
+								</Control>								
+							</Group>
+						</OfficeTab>
+					</ExtensionPoint>
+				</DesktopFormFactor>
+			</Host>
+		</Hosts>
+		<Resources>
+			<bt:Images>
+				<bt:Image id="residIcon-16" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-16.png" />				
+				<bt:Image id="residIcon-32" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-32.png" />				
+				<bt:Image id="residIcon-80" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-80.png" />
+			</bt:Images>
+			<bt:Urls>
+				<bt:Url id="residDesktopRibbonHandler" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/ribbon-functions.html" />
+			</bt:Urls>
+			<bt:ShortStrings>
+				<bt:String id="residLabelGroupMsgRead" DefaultValue="Send Message" />
+				<bt:String id="residLabelNew" DefaultValue="Send Message" />
+			</bt:ShortStrings>
+			<bt:LongStrings>
+				<bt:String id="residLabelGroupMsgRead" DefaultValue="Send Message" />
+				<bt:String id="residLabelNew" DefaultValue="Send Message" />
+			</bt:LongStrings>
+		</Resources>
+		<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">			
+			<Hosts>
+				<Host xsi:type="MailHost">
+					<DesktopFormFactor>
+					    <FunctionFile resid="residDesktopRibbonHandler" />
+						<ExtensionPoint xsi:type="MessageReadCommandSurface">
+							<OfficeTab id="TabDefault">
+								<Group id="groupMsgRead">
+									<Label resid="residLabelGroupMsgRead"/>								
+									<Control xsi:type="Button" id="buttonNew">
+										<Label resid="residLabelNew" />
+										<Supertip>
+											<Title resid="residLabelNew" />
+											<Description resid="residLabelNew" />
+										</Supertip>
+										<Icon>
+											<bt:Image size="16" resid="residIcon-16" />
+											<bt:Image size="32" resid="residIcon-32" />
+											<bt:Image size="80" resid="residIcon-80" />
+										</Icon>
+										<Action xsi:type="ExecuteFunction">
+											<FunctionName>openDialog</FunctionName>
+										</Action>
+									</Control>								
+								</Group>
+							</OfficeTab>
+						</ExtensionPoint>
+					</DesktopFormFactor>
+				</Host>
+			</Hosts>
+			<Resources>
+				<bt:Images>
+					<bt:Image id="residIcon-16" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-16.png" />
+					<bt:Image id="residIcon-25" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-25.png" />					
+					<bt:Image id="residIcon-32" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-32.png" />
+					<bt:Image id="residIcon-48" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-48.png" />
+					<bt:Image id="residIcon-50" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-50.png" />
+					<bt:Image id="residIcon-64" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-64.png" />
+					<bt:Image id="residIcon-75" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-75.png" />				
+					<bt:Image id="residIcon-80" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-80.png" />
+					<bt:Image id="residIcon-96" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-96.png" />
+					<bt:Image id="residIcon-144" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/resources/images/logo-144.png" />
+				</bt:Images>
+				<bt:Urls>
+					<bt:Url id="residDesktopRibbonHandler" DefaultValue="https://static-resources.yasoon.com/outlook-edge-messageparent-bug/ribbon-functions.html" />
+				</bt:Urls>
+				<bt:ShortStrings>
+					<bt:String id="residLabelGroupMsgRead" DefaultValue="Send Message" />
+					<bt:String id="residLabelNew" DefaultValue="Send Message" />
+				</bt:ShortStrings>
+				<bt:LongStrings>
+					<bt:String id="residLabelGroupMsgRead" DefaultValue="Send Message" />
+					<bt:String id="residLabelNew" DefaultValue="Send Message" />	
+				</bt:LongStrings>
+			</Resources>
+		</VersionOverrides>
+	</VersionOverrides>
+</OfficeApp>
